@@ -1,0 +1,33 @@
+# Deep Researcher Agent - Environment Configuration
+# Copy this file to .env and fill in your API keys
+
+# OpenAI Configuration (for high-quality synthesis)
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-3.5-turbo
+
+# HuggingFace Configuration (alternative to OpenAI)
+HUGGINGFACE_API_KEY=your_huggingface_api_key_here
+HUGGINGFACE_MODEL=microsoft/DialoGPT-medium
+
+# Server Configuration
+API_HOST=0.0.0.0
+API_PORT=8000
+DEBUG=True
+
+# Vector Store Configuration
+EMBEDDING_MODEL=all-MiniLM-L6-v2
+VECTOR_STORE_PATH=./data/vector_store
+MAX_DOCUMENT_SIZE=10000000
+
+# Document Processing
+SUPPORTED_FORMATS=txt,pdf,docx
+MAX_DOCUMENTS_PER_QUERY=50
+
+# Report Generation
+REPORT_OUTPUT_DIR=./data/reports
+DEFAULT_REPORT_FORMAT=pdf
+
+# CORS Configuration
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+
+

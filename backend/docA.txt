@@ -1,0 +1,3 @@
+DocA intro. This is only about alpha topic.
+--- Page 1 ---
+Alpha improves X by 10%.
