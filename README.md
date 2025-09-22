@@ -78,6 +78,12 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ## 🏗️ Architecture
 
+### Architecture Diagram
+
+![Deep Researcher Agent – System Architecture](docs/architecture.png)
+
+Place the exported diagram image at `docs/architecture.png`. The diagram illustrates the full flow across the User Interface, Backend, Agents, Vector DB/Embeddings, and LLM integrations (OpenAI/HuggingFace), covering both Query and Document Research paths.
+
 ### Frontend (React + TypeScript)
 ```
 src/
