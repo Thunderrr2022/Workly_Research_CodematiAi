@@ -85,7 +85,15 @@ OPENAI_API_KEY=your_openai_api_key_here
   
 </p>
 
-Place your diagram image at `docs/architecture.png`. The diagram illustrates the flow across the User Interface, Backend, Agents, Vector DB/Embeddings, and LLM integrations (OpenAI/HuggingFace), covering both Query and Document Research paths.
+
+- **User Interface**: Users upload documents or enter a query. Results show a synthesized answer, a reasoning trace, and explicit knowledge gaps.
+- **Backend Endpoints**: `Doc Upload` extracts text (with OCR fallback for scanned PDFs), chunks it, creates embeddings, and stores them. `Research` orchestrates query decomposition, retrieval, synthesis, and gap detection.
+- **Agents**: `RetrieverAgent` runs semantic search on FAISS to fetch the most relevant chunks. `SynthesizerAgent` fuses evidence across sources into a structured Markdown report with citations, implications, and confidence.
+- **Vector DB / Embeddings**: Local `sentence-transformers` embeddings indexed in FAISS. Document research uses a document-scoped index to avoid cross-document contamination.
+- **LLM Integrations**: When enabled, OpenAI/HuggingFace refine the synthesis from retrieved chunks; otherwise a local synthesis pipeline is used.
+- **Outputs**: Backend returns `answer` (report), `reasoning_trace` (steps + sources), and `gaps` (missing info). The UI supports export to PDF/Markdown.
+
+
 
 ### Frontend (React + TypeScript)
 ```
